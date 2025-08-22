@@ -1,0 +1,11 @@
+{
+  "gsm8k": {
+    "status": "completed",
+    "metrics": {
+      "majority_vote_accuracy": 1.0
+    },
+    "total_examples": 5,
+    "should_abstain": 0,
+    "should_answer": 5
+  }
+}

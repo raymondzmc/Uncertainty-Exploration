@@ -1,0 +1,88 @@
+Loading models...
+  LM: gpt2
+  NLI: cross-encoder/nli-MiniLM2-L6-H768
+  Device: mps
+
+Loading gsm8k dataset...
+
+============================================================
+RESULTS: gsm8k
+============================================================
+
+Dataset Statistics:
+  Total examples: 5
+  Should abstain: 0
+  Should answer: 5
+
+Should Answer - Entropy Statistics:
+  Semantic Entropy: 65.989 ± 3.204
+  Predictive Entropy: 65.604 ± 4.026
+  Avg Clusters: 4.60
+
+----------------------------------------
+AUROC Scores (higher is better):
+----------------------------------------
+  Semantic Entropy: nan
+  Predictive Entropy: nan
+  Number of Clusters: nan
+
+Majority Vote Abstention Accuracy: 1.000
+
+----------------------------------------
+Sample Outputs (first 3 examples):
+----------------------------------------
+
+Example 1:
+  Question: Kylar went to the store to buy glasses for his new apartment. One glass costs $5, but every second g...
+  Should Abstain: False
+  Semantic Entropy: 63.577
+  Clusters: 5
+  Abstained Samples: 0/5
+  Sample Responses:
+    1: Kylar has already paid $5.00 for each glasses.
+
+Question: Kylar walks into a store and buys a new pa...
+    2: He needs about $10,000 to buy the glasses. It is likely he will need at least $20,000 to buy the gla...
+
+Example 2:
+  Question: James decides to run 3 sprints 3 times a week.  He runs 60 meters each sprint.  How many total meter...
+  Should Abstain: False
+  Semantic Entropy: 64.807
+  Clusters: 4
+  Abstained Samples: 0/5
+  Sample Responses:
+    1: He runs 50, 60, and 90 meters. 
+
+Question: James runs 2.5 marathon runs a week.  How many total mete...
+    2: 6.5.
+
+Question: James is able to maintain a base of 130 meters.
+
+Answer:  • James or anyone else in ...
+
+Example 3:
+  Question: Carla is downloading a 200 GB file. Normally she can download 2 GB/minute, but 40% of the way throug...
+  Should Abstain: False
+  Semantic Entropy: 72.044
+  Clusters: 5
+  Abstained Samples: 0/5
+  Sample Responses:
+    1: The download takes approximately 18.25 hours, and the download pauses for about 4 minutes. After the...
+    2: It takes 0.01 seconds. The download pauses, so Carla has to restart all the files from the previous ...
+
+
+STDERR:
+
+Processing examples:   0%|          | 0/5 [00:00<?, ?it/s]
+Processing examples:  20%|██        | 1/5 [00:08<00:34,  8.61s/it]
+Processing examples:  40%|████      | 2/5 [00:13<00:18,  6.29s/it]
+Processing examples:  60%|██████    | 3/5 [00:17<00:10,  5.23s/it]
+Processing examples:  80%|████████  | 4/5 [00:20<00:04,  4.55s/it]
+Processing examples: 100%|██████████| 5/5 [00:25<00:00,  4.60s/it]
+Processing examples: 100%|██████████| 5/5 [00:25<00:00,  5.09s/it]
+/Users/raymond/opt/miniconda3/envs/uncertainty/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:424: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/Users/raymond/opt/miniconda3/envs/uncertainty/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:424: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/Users/raymond/opt/miniconda3/envs/uncertainty/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:424: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(

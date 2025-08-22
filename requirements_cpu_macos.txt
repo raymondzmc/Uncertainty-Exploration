@@ -1,0 +1,38 @@
+# Requirements for Semantic Entropy + AbstentionBench (CPU - macOS)
+# Tested on macOS with Apple Silicon and Intel CPUs
+
+# Core PyTorch for CPU
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.1.0
+
+# Transformers and ML libraries
+transformers==4.36.0
+accelerate==0.25.0
+datasets==2.15.0
+tokenizers==0.15.0
+
+# Scientific computing
+numpy==1.24.3
+scikit-learn==1.3.2
+
+# Progress and utilities
+tqdm==4.66.1
+
+# Optional optimizations for macOS
+# For Apple Silicon (M1/M2/M3) acceleration, you can install:
+# pip install torch torchvision torchaudio
+# This will automatically use Metal Performance Shaders (MPS) when available
+
+# Installation instructions:
+# 1. Create virtual environment:
+#    python -m venv venv_cpu
+#    source venv_cpu/bin/activate
+#
+# 2. Install requirements:
+#    pip install -r requirements_cpu_macos.txt
+#
+# 3. For Apple Silicon optimization (optional):
+#    pip install --upgrade torch torchvision torchaudio
+#
+# 4. Verify installation:
+#    python -c "import torch; print(f'PyTorch: {torch.__version__}'); print(f'MPS available: {torch.backends.mps.is_available()}')" 

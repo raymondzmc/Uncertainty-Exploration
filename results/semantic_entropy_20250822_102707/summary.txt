@@ -1,0 +1,14 @@
+Configuration: fast
+Timestamp: 20250822_102707
+Device: mps
+
+Results by Dataset:
+--------------------------------------------------
+
+GSM8K:
+  Status: ✓ Completed
+  Semantic Entropy AUROC: 72.044
+  Predictive Entropy AUROC: nan
+  Majority Vote Accuracy: 1.000
+
+======================================================================

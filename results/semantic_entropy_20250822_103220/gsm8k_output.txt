@@ -1,0 +1,88 @@
+Loading models...
+  LM: gpt2
+  NLI: cross-encoder/nli-MiniLM2-L6-H768
+  Device: mps
+
+Loading gsm8k dataset...
+
+============================================================
+RESULTS: gsm8k
+============================================================
+
+Dataset Statistics:
+  Total examples: 5
+  Should abstain: 0
+  Should answer: 5
+
+Should Answer - Entropy Statistics:
+  Semantic Entropy: 66.547 ± 9.298
+  Predictive Entropy: 66.547 ± 9.298
+  Avg Clusters: 5.00
+
+----------------------------------------
+AUROC Scores (higher is better):
+----------------------------------------
+  Semantic Entropy: nan
+  Predictive Entropy: nan
+  Number of Clusters: nan
+
+Majority Vote Abstention Accuracy: 1.000
+
+----------------------------------------
+Sample Outputs (first 3 examples):
+----------------------------------------
+
+Example 1:
+  Question: Melanie is a door-to-door saleswoman. She sold a third of her vacuum cleaners at the green house, 2 ...
+  Should Abstain: False
+  Semantic Entropy: 75.588
+  Clusters: 5
+  Abstained Samples: 0/5
+  Sample Responses:
+    1: The number of vacuum cleaners sold at the red house was sufficient to supply a full inventory of the...
+    2: She gave her vacuum cleaner to the person to whom she asked, and then moved 60lb of water from the g...
+
+Example 2:
+  Question: Toula went to the bakery and bought various types of pastries. She bought 3 dozen donuts which cost ...
+  Should Abstain: False
+  Semantic Entropy: 68.286
+  Clusters: 5
+  Abstained Samples: 0/5
+  Sample Responses:
+    1: $47.67
+
+Question: Compared to the actual price of the donuts, how much will it cost to double the do...
+    2: $70.00. The total cost was $69.00, and the do-it-yourself cost was $41.00. The do-...
+
+Example 3:
+  Question: A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it ...
+  Should Abstain: False
+  Semantic Entropy: 70.801
+  Clusters: 5
+  Abstained Samples: 0/5
+  Sample Responses:
+    1: 9.
+
+1. The robe takes an average of 10 bolts. 
+
+2. The robe takes an average of 10 bolts....
+    2: It takes 3 bolts of blue fiber.
+
+You have already answered the question (and you have already answer...
+
+
+STDERR:
+
+Processing examples:   0%|          | 0/5 [00:00<?, ?it/s]
+Processing examples:  20%|██        | 1/5 [00:04<00:16,  4.24s/it]
+Processing examples:  40%|████      | 2/5 [00:07<00:11,  3.80s/it]
+Processing examples:  60%|██████    | 3/5 [00:11<00:07,  3.75s/it]
+Processing examples:  80%|████████  | 4/5 [00:15<00:03,  3.79s/it]
+Processing examples: 100%|██████████| 5/5 [00:18<00:00,  3.65s/it]
+Processing examples: 100%|██████████| 5/5 [00:18<00:00,  3.74s/it]
+/Users/raymond/opt/miniconda3/envs/uncertainty/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:424: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/Users/raymond/opt/miniconda3/envs/uncertainty/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:424: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/Users/raymond/opt/miniconda3/envs/uncertainty/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:424: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(

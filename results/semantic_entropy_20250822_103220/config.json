@@ -1,0 +1,19 @@
+{
+  "config_name": "fast",
+  "config": {
+    "description": "Quick test run (5 examples per dataset)",
+    "datasets": [
+      "gsm8k"
+    ],
+    "subset_size": 5,
+    "num_samples": 5,
+    "models": {
+      "lm": "gpt2",
+      "nli": "cross-encoder/nli-MiniLM2-L6-H768"
+    },
+    "temperature": 0.7,
+    "max_new_tokens": 32
+  },
+  "timestamp": "20250822_103220",
+  "device": "mps"
+}

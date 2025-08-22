@@ -1,0 +1,55 @@
+# Requirements for Semantic Entropy + AbstentionBench (GPU - Ubuntu)
+# Tested with CUDA 11.8 and 12.1 on Ubuntu 20.04/22.04
+
+# Core PyTorch with CUDA support
+# For CUDA 11.8:
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.1.0+cu118
+
+# For CUDA 12.1 (uncomment if using CUDA 12.1, comment out CUDA 11.8 line above):
+# --extra-index-url https://download.pytorch.org/whl/cu121
+# torch==2.1.0+cu121
+
+# Transformers and ML libraries
+transformers==4.36.0
+accelerate==0.25.0
+datasets==2.15.0
+tokenizers==0.15.0
+
+# Scientific computing
+numpy==1.24.3
+scikit-learn==1.3.2
+
+# Progress and utilities
+tqdm==4.66.1
+
+# GPU optimizations
+nvidia-ml-py3==7.352.0  # For GPU monitoring
+bitsandbytes==0.41.3    # Optional: for 8-bit quantization
+
+# Installation instructions:
+# 1. Check CUDA version:
+#    nvidia-smi
+#    nvcc --version
+#
+# 2. Create virtual environment:
+#    python -m venv venv_gpu
+#    source venv_gpu/bin/activate
+#
+# 3. Install requirements (choose based on CUDA version):
+#    # For CUDA 11.8:
+#    pip install -r requirements_gpu_ubuntu.txt
+#    
+#    # For CUDA 12.1, first edit this file to uncomment CUDA 12.1 lines
+#    # and comment CUDA 11.8 lines, then:
+#    pip install -r requirements_gpu_ubuntu.txt
+#
+# 4. Verify installation:
+#    python -c "import torch; print(f'PyTorch: {torch.__version__}'); print(f'CUDA available: {torch.cuda.is_available()}'); print(f'CUDA version: {torch.version.cuda}')"
+#
+# 5. For memory-efficient inference (optional):
+#    # Install Flash Attention 2 for faster attention:
+#    pip install flash-attn --no-build-isolation
+#
+# Note: For production use, consider using Docker with NVIDIA Container Toolkit
+# for reproducible GPU environments. 

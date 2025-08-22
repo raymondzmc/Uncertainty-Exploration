@@ -1,0 +1,13 @@
+{
+  "gsm8k": {
+    "status": "completed",
+    "metrics": {
+      "semantic_entropy_auroc": 72.044,
+      "predictive_entropy_auroc": NaN,
+      "majority_vote_accuracy": 1.0
+    },
+    "total_examples": 5,
+    "should_abstain": 0,
+    "should_answer": 5
+  }
+}
