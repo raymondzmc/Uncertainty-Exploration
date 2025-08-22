@@ -223,7 +223,9 @@ class NLIModel:
     ):
         self.tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
         kwargs = {}
-        if torch_dtype is not None:
+        # Force float32 for NLI models to avoid dtype issues
+        # DeBERTa models have issues with float16
+        if torch_dtype is not None and "deberta" not in model_name.lower():
             kwargs["torch_dtype"] = torch_dtype
         self.model = AutoModelForSequenceClassification.from_pretrained(
             model_name, **kwargs
@@ -246,9 +248,17 @@ class NLIModel:
             return_tensors="pt",
             truncation=True,
             max_length=512
-        ).to(self.device)
+        )
         
-        logits = self.model(**inputs).logits[0].float()
+        # Move to device and ensure float32
+        for key in inputs:
+            if isinstance(inputs[key], torch.Tensor):
+                inputs[key] = inputs[key].to(self.device)
+        
+        # Get logits and ensure float32
+        with torch.autocast(device_type=self.device.split(':')[0] if ':' in self.device else self.device, enabled=False):
+            logits = self.model(**inputs).logits[0].float()
+        
         probs = torch.softmax(logits, dim=-1)
         return float(probs[self.entail_idx].item())
 
@@ -718,6 +728,7 @@ def main():
     args = parser.parse_args()
     
     # Set dtype based on device
+    # Use float16 for LM on GPU to save memory, but NLI will use float32
     torch_dtype = torch.float16 if args.device.startswith("cuda") else None
     
     print(f"Loading models...")
